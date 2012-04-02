@@ -1,0 +1,133 @@
+" F - special keys
+map <F1> :Git checkout master<CR>
+map <F2> :Gstatus<CR>
+map <F3> :Git push origin master<CR>
+nnoremap <silent> <F4> :TagbarToggle<CR>
+map <F5> <C-w>o
+" <F6> Open
+map <F7> :Git checkout -b
+map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+nmap <F9> :set list!<CR>
+map <F11> :Fullscreen<CR>
+
+nmap <silent> <leader>/ :nohlsearch<CR>
+"
+" Fixing some horrible vim defaults
+"
+map <leader>e <D-A-Left>
+map tt <C-w>o
+" Must be keymaps
+map <space> :
+map ee <C-w><C-w>
+map - <c-w><
+map = <c-w>>
+map  j <up>
+map  k <down>
+map  l <left>
+map  ; <right>
+
+imap <space>ul <c-tab>
+map <space>sh :ConqueTermSplit zsh<cr>
+map <space>shv :ConqueTermVSplit zsh<cr>
+imap jj <Esc>
+imap <A-l> <left>
+imap <A-j> <up>
+imap <A-k> <down>
+imap <A-;> <right>
+imap <Esc>l <left>
+imap <Esc>j <up>
+imap <Esc>k <down>
+imap <Esc>; <right>
+nmap <S-j> <<
+nmap <S-k> >>
+nnoremap <A-j> :m-2<CR>==
+nnoremap <A-k> :m+<CR>==
+
+map <C-j> :bp<CR>
+map <C-k> :bn<CR>
+
+" Usefull mappings
+" vnoremap <silent> <C-c> "+y<CR>
+" map <C-v> "+P<CR>
+map <C-A><C-A> gg"+yG
+
+vnoremap <C-c> "+y<CR>
+
+nmap hh :bd<cr>
+nmap ff :BD<cr>
+
+nmap nn :e<cr>
+
+nmap <leader>cda :cd /home/rege/rails_projects/adsagh<cr>
+nmap <leader>cd :cd %:p:h<cr>
+nmap <leader>e :e ~/.vimrc<CR>
+map <leader>b :CtrlPBufTagAll<cr>
+" Undo/Redo
+" map <C-z> u
+map <C-y> <C-R>
+" inoremap <silent> <C-Z> <C-\><C-O>db
+" inoremap <silent> <C-U> <C-\><C-O>d0
+" inoremap <silent> <C-Y> <C-R>"
+
+if arrowkeys == "off"
+    nnoremap <up> <nop>
+    nnoremap <down> <nop>
+    nnoremap <left> <nop>
+    nnoremap <right> <nop>
+    inoremap <up> <nop>
+    inoremap <down> <nop>
+    inoremap <left> <nop>
+    inoremap <right> <nop>
+endif
+
+"nnoremap <silent> j gj
+"nnoremap <silent> k gk
+nore zz v$
+vmap s S
+" Remembering the line offset of a mark should be the norm
+nnoremap ' `
+nnoremap ` '
+
+" Indent using tabs (while in visual mode)
+vnoremap <silent> <tab>       >gv
+vnoremap <silent> <s-tab>     <gv
+vnoremap <silent> <           <gv
+vnoremap <silent> >           >gv
+
+" Search only in the selected block (visual mode)
+vnoremap <silent> / <esc>/\%V
+
+" Buffer horizontal traversal using C-j and C-k
+"nnoremap <silent> <C-j> <C-w>j
+"nnoremap <silent> <C-k> <C-w>k
+
+" Tabs uses c-l and c-h
+map <silent> <C-h> <esc>:tabprevious<cr>
+map <silent> <C-l> <esc>:tabnext<cr>
+
+" Open new tab pushing ,t
+nnoremap <silent> ,t <ESC>:tabnew<CR>
+
+" Split helpers
+map <silent> <leader>vw <C-w>v<C-w>l    " Split vertically
+map <silent> <leader>hw <C-w>s<C-w>l    " Horizontally
+
+" Toggle line-numbering
+nn <leader>n <esc>:set number! number?<cr>
+
+" Omni autocomplete
+inoremap <Nul> <C-x><C-o>
+"
+" Easy copy-paste from system clipboard
+nnoremap <silent> ,p "+p
+nnoremap <silent> ,P "+P
+nnoremap <silent> ,y "+yy
+
+" Smart home (go to real start of line)
+nnoremap <silent> <Home> g^
+
+" Save file by Ctrl+S
+inoremap <silent> <C-S> <ESC>:w<CR>i
+nnoremap <silent> <C-S> <ESC>:w<CR>i
+vnoremap <silent> <C-S> <ESC>:w<CR>i
+
